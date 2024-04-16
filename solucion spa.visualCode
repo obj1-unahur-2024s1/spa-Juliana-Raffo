@@ -1,0 +1,121 @@
+object olivia {
+	var gradoDeConcentracion = 6
+	
+	method gradoDeConcentracion(){
+		return gradoDeConcentracion 
+	}
+	
+	method recibirMasajes(){
+		gradoDeConcentracion = gradoDeConcentracion + 3
+	}
+	
+	method darBanioDeVapor(){}
+	
+	method discutir(){
+		gradoDeConcentracion = gradoDeConcentracion - 1
+	}
+}
+
+object bruno{
+	var felicidad = true
+	var tieneSed = false
+	var peso = 55000
+	
+	method recibirMasajes(){
+		felicidad = true
+	}
+	
+	method darBanioDeVapor(){
+		tieneSed = true
+		peso = peso - 500
+	}
+	
+	method tomarAgua(){
+		tieneSed = false 
+	}
+
+	method comerFideos(){
+		peso = peso + 250
+		tieneSed = true
+	}
+	
+	method correr(){
+		peso = peso - 300
+	}
+	
+	method verNoticiero(){
+		felicidad = false 
+	}
+	
+	method estaFeliz(){
+		return felicidad
+	}
+	
+	method tieneSed(){
+		return tieneSed
+	}
+	
+	method peso(){
+		return peso
+	}
+	
+	method estaPerfecto(){
+		return felicidad and not tieneSed and (peso >= 50000 and peso <= 70000)
+	}
+	
+	method mediodiaEnCasa(){
+		self.comerFideos()
+		self.tomarAgua()
+		self.verNoticiero()
+	}	
+}
+
+object ramiro{
+	var gradoDeContractura = 0
+	var tienePielGrasosa = false 
+	
+	method gradoDeContractura(){
+		return gradoDeContractura
+	}
+	
+	method tienePielGrasosa(){
+		return tienePielGrasosa
+	}
+	
+	method recibirMasajes(){
+		gradoDeContractura = 0.max( gradoDeContractura - 2)
+	}
+	
+	method darBanioDeVapor(){
+		tienePielGrasosa = false 
+	}
+	
+	method comerBigMac(){
+		tienePielGrasosa = true 
+	}
+	
+	method bajarALaFosa(){
+		tienePielGrasosa = true
+		gradoDeContractura = gradoDeContractura + 1
+	}
+	
+	method jugarPaddle(){
+		gradoDeContractura = gradoDeContractura + 3
+	}
+	
+	method diaDeTrabajo(){
+		self.bajarALaFosa()
+		self.comerBigMac()
+		self.bajarALaFosa()
+	}
+}
+
+object spa{
+	
+	method atender(persona){
+		persona.recibirMasajes()
+		persona.darBanioDeVapor()
+	}
+	
+	
+}
